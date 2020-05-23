@@ -11,6 +11,7 @@ def scrape():
     executable_path = {'executable_path': 'chromedriver.exe'}
     browser = Browser('chrome', **executable_path, headless=False)
     browser.visit(url)
+    time.sleep(5)
     html = browser.html
     soup = BeautifulSoup(html, 'html.parser')
     item = soup.find('li',class_='slide')
